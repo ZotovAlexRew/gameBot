@@ -20,8 +20,15 @@ function gameBot()
     //Если попытки закончились
     if (attempts <= 1)
     {
-      number = alert("Попытки закончились, хочешь сыграть еще?");
-      gameBot();
+      number = confirm("Попытки закончились, хочешь сыграть еще?");
+      if (number === false)
+        {
+        number = alert("Игра окончена");
+        }
+        else if (number == true)
+        {
+          gameBot();
+        }   
     }
     else
     {
@@ -38,7 +45,14 @@ function gameBot()
       else if (number == hiddenNumber)
       {
         number = confirm("Поздравляю, ты угадал! Хочещь сыграть еще?");
-        gameBot();
+        if (number === false)
+        {
+        number = alert("Игра окончена");
+        }
+        else if (number == true)
+        {
+          gameBot();
+        }        
       }
       else if (number > hiddenNumber)
       {
